@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta caharset="UTF-8">
+	<title> Угадай число </title>
+	<style>
+	body
+	{
+	font-size: 20px;
+	color:brown;
+	}
+	b
+	{
+	color:crimson;
+	}
+	strong
+	{
+	color:coral;
+	}
+	</style>
+</head>
+
+<body>
+<script>
+var min=1;
+var max=100;
+// Загадываем случайное число
+var guessNumber=Math.floor(Math.random()*(max-min+1))+min;
+alert("Я загадал число от "+min+" до "+max+". Угадайте его вдвоем за 7 попыток")
+document.write("Я загадал число от "+min+" до "+max+". Угадайте его вдвоем за 7 попыток<br>");
+// Номер попытки
+var tryCount1=0
+var userAnswer1;
+var tryCount2=0
+var userAnswer2;
+do{
+// Приращаем количество попыток
+	tryCount1=tryCount1+1;
+	tryCount2=tryCount2+1;
+	userAnswer1=+prompt(tryCount1+" попытка, первый пользователь. Ваш вариант:");
+	userAnswer2=+prompt(tryCount2+" попытка, второй пользователь. Ваш вариант:");
+	document.write("1 пользователь попытка№"+tryCount1+" Число "+guessNumber+" Мой вариант "+userAnswer1+"<br>");
+	if(userAnswer1>guessNumber)
+		document.write("<b> 1 пользователь, перелет</b><br>");
+	if(userAnswer1<guessNumber)
+		document.write("<strong> 1 пользователь, недолет</strong><br>");
+	document.write("2 пользователь попытка№"+tryCount2+" Число "+guessNumber+" Мой вариант "+userAnswer2+"<br>");
+	if(userAnswer2>guessNumber)
+		document.write("<b> 2 пользователь, перелет</b><br>");
+	if(userAnswer2<guessNumber)
+		document.write("<strong> 2 пользователь, недолет</strong><br>");
+}
+while(userAnswer1!=guessNumber && tryCount1<7 && userAnswer2!=guessNumber && tryCount2<7);
+if(userAnswer1==guessNumber)document.write("Первый пользователь угадал!<br>");
+	else document.write("Первый пользователь не угадал<br>");
+if(userAnswer2==guessNumber)document.write("Второй пользователь угадал!<br>");
+	else document.write("Второй пользователь не угадал<br>");
+if(userAnswer1==guessNumber&&userAnswer2==guessNumber)document.write("Вы оба угадали. Ничья")
+	else if(userAnswer1!=guessNumber&&userAnswer2!=guessNumber) document.write("Никто не угадал")
+</script>
+
+</body>
+</html>

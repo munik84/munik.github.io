@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+<title>Загадки</title>
+
+</head>
+
+<body>
+<h1 id="head1"> Личный сайт студента Geekbrains </h1>
+<h3> Отгадай загадки </h3>
+
+<p>Сто одежек и все без застежек</p>
+<input type="text" id=puzzle1 />
+
+</br></br></br>
+
+<p>Зимой и летом одним цветом</p>
+<input type="text" id=puzzle2 />
+
+</br></br></br>
+
+<input type="button" onclick="total()" value="Ответить" />
+
+<script>
+function checkAnswer(id, answer){
+var userAnswer = document.getElementById(id).value;
+if (userAnswer==answer)
+	return true;
+	else return false;
+}
+function total(){
+var right =0;
+if (checkAnswer('puzzle1', 'капуста')==true) right++;
+if (checkAnswer('puzzle2', 'елка')==true) right++;
+if (right==0) alert ('Вы не угадали ничего');
+	else alert ('Правильных ответов ' + right);
+}
+
+</script>
+
+
+</body>
+</html>

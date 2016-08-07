@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta caharset="UTF-8">
+	<title> Угадай число </title>
+	<style>
+	body
+	{
+	font-size: 20px;
+	color:brown;
+	}
+	b
+	{
+	color:crimson;
+	}
+	strong
+	{
+	color:coral;
+	}
+	</style>
+</head>
+
+<body>
+<script>
+var min=1;
+var max=100;
+// Загадывам случайное число
+var guessNumber=Math.floor(Math.random()*(max-min+1))+min;
+alert("Я загадал число от "+min+" до "+max+". Угадай его за 7 попыток")
+document.write("Я загадал число от "+min+" до "+max+". Угадай его за 7 попыток<br>");
+// Номер попытки
+var tryCount=0
+var userAnswer;
+do{
+// Приращаем количество попыток
+	tryCount=tryCount+1;
+	userAnswer=+prompt(tryCount+" попытка. Ваш вариант:");
+	document.write(tryCount+"."+guessNumber+" ");
+	if(userAnswer>guessNumber)
+		document.write("<b>Перелет</b><br>");
+	if(userAnswer<guessNumber)
+		document.write("<strong>Недолет</strong><br>");
+}
+while(userAnswer!=guessNumber && tryCount<7);
+if(userAnswer==guessNumber)document.write("Угадал!");
+	else document.write("Проиграл");
+</script>
+
+</body>
+</html>

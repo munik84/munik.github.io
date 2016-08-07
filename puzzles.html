@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script>
+var answer0=prompt("Я загадаю тебе загадку смертный! Ты готов?"); //1й контакт
+var end1="Вы самое слабое звено. Прощайте";
+var end2="Молодец смертный! Продолжай дышать и поддерживать температуру тела";
+var end3="Не угадал. Ты будешь страдать еще 3 загадки!";
+var count=0; //подсчет правильных ответов
+
+if (answer0=="Y" || answer0=="y" || answer0=="yes"|| answer0== "Yes" || answer0=="YES"
+|| answer0=="Да" || answer0=="да" )
+{
+	var answer1=prompt("Кто из нас беспонтовый пирожок?") // 1 загадка
+		if(answer1=="каждый из нас" || answer1=="Каждый из нас")
+			alert(end2);
+		else
+		{
+			alert(end3);
+			var answer2=prompt("Есть у камня у зверя у облака. В душу не лезу ловлю отражение облика");//2 загадка
+				if (answer2=="отражение" || answer2=="Отражение")
+				{
+					count=count+1;
+					var answer3=prompt("Сколько человек на сундук мертвеца?");// 3 загадка
+					if(answer3==16)
+					{
+					count=count+1;
+					alert("Правильных ответов " + count);
+					alert(end2);
+				  }
+					else
+					alert(end1);
+				}
+				else
+				alert(end1);
+			}
+}
+else
+	alert(end1);
+
+
+
+
+</script>
